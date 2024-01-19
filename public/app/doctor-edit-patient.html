@@ -30,7 +30,7 @@
 
         <div class="iq-sidebar  sidebar-default ">
             <div class="iq-sidebar-logo d-flex align-items-center">
-                <a href="page-patient.html" class="header-logo">
+                <a href="doctor-monitors-patients.html" class="header-logo">
                     <img src="../assets/images/HEALTH.png" alt="logo">
                     <h3 class="logo-title light-logo">Heart Health </h3>
                 </a>
@@ -55,24 +55,24 @@
                             </a>
                             <ul id="patient" class="iq-submenu collapse" data-toggle="collapse">
                                 <li class="">
-                                    <a href="page-patient.html">
+                                    <a href="doctor-monitors-patients.html">
                                         <i class="las la-minus"></i><span>Theo dõi</span>
                                     </a>
                                 </li>
                                 <li class="active">
-                                    <a href="patient-add.html">
+                                    <a href="doctor-add-patient.html">
                                         <i class="las la-minus"></i><span>Thêm bệnh nhân</span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="patient-list.html">
+                                    <a href="doctor-patient-list.html">
                                         <i class="las la-minus"></i><span>Danh sách</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="">
-                            <a href="page-calender.html" class="svg-icon">
+                            <a href="doctor-calender.html" class="svg-icon">
                                 <svg class="svg-icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -94,7 +94,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                         <i class="ri-menu-line wrapper-menu"></i>
-                        <a href="page-patient.html" class="header-logo">
+                        <a href="doctor-monitors-patients.html" class="header-logo">
                             <h4 class="logo-title text-uppercase">Heart Health </h4>
 
                         </a>
@@ -111,13 +111,16 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto navbar-list align-items-center">
                                 <li class="nav-item nav-icon dropdown caption-content">
-                                    <a href="#" class="search-toggle dropdown-toggle  d-flex align-items-center" id="dropdownMenuButton4"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="../assets/images/user/user-2.jpg" class="img-fluid rounded-circle" alt="user" id="avatarDoctor2">
-                                    <div class="caption ml-3">
-                                        <h6 class="mb-0 line-height" id="nameDoctor2">Tân Nguyễn<i class="las la-angle-down ml-2"></i></h6>
-                                    </div>
-                                </a> 
+                                    <a href="#" class="search-toggle dropdown-toggle  d-flex align-items-center"
+                                        id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <img src="../assets/images/user/user-2.jpg" class="img-fluid rounded-circle"
+                                            alt="user" id="avatarDoctor2">
+                                        <div class="caption ml-3">
+                                            <h6 class="mb-0 line-height" id="nameDoctor2"><i
+                                                    class="las la-angle-down ml-2"></i></h6>
+                                        </div>
+                                    </a>
                                     <ul class="dropdown-menu dropdown-menu-right border-none"
                                         aria-labelledby="dropdownMenuButton">
                                         <li class="dropdown-item d-flex svg-icon">
@@ -162,7 +165,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Thêm bệnh nhân mới</h4>
+                                    <h4 class="card-title">Chỉnh sửa thông tin</h4>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -171,10 +174,10 @@
                                         <div class="crm-profile-img-edit position-relative">
                                             <img id="profileImage" class="crm-profile-pic rounded avatar-100" 
                                                 src="../assets/images/user/11.png" alt="profile-pic">
-                                                <div class="crm-p-image bg-primary" onclick="document.getElementById('inputImage').click();">
-                                                    <i class="las la-pen upload-button"></i>
-                                                    <input id="inputImage" class="file-upload" type="file" accept="image/*" style="opacity: 0; position: absolute;" onchange="handleImageUpload(event)">
-                                                </div>                                                
+                                            <div class="crm-p-image bg-primary">
+                                                <i class="las la-pen upload-button"></i>
+                                                <input id="inputImage" class="file-upload" type="file" accept="image/*"style="display:none;" onchange="handleImageUpload(event)">
+                                            </div>
                                         </div>
                                     </div>
                                     <div><span>Mạng xã hội</span></div>
@@ -190,7 +193,7 @@
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Thông tin bệnh nhân</h4>
+                                    <h4 class="card-title">Chỉnh sửa thông tin của bệnh nhân </h4>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -247,7 +250,6 @@
                                                 </select>
                                             </div>
 
-
                                             <div class="form-group col-md-6">
                                                 <label for="add1">Số nhà, đường:</label>
                                                 <input type="text" class="form-control" id="add1"
@@ -289,7 +291,7 @@
                                             </div>
                                         </div>
                                         <hr>
-                                        <h5 class="mb-3">Tài khoản định danh</h5>
+                                        <h5 class="mb-3">Cấp lại Tài khoản định danh</h5>
                                         <div class="row">
                                             <div class="form-group col-md-12">
                                                 <label for="uname">Tên đăng nhập:</label>
@@ -297,13 +299,13 @@
                                                     placeholder="Tên đăng nhập">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="pass">Mật khẩu:</label>
-                                                <input type="password" class="form-control" id="pass"
+                                                <label for="pass">Cấp lại mật khẩu:</label>
+                                                <input type="text" class="form-control" id="pass"
                                                     placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="rpass">Nhập lại mật khẩu:</label>
-                                                <input type="password" class="form-control" id="rpass"
+                                                <input type="text" class="form-control" id="rpass"
                                                     placeholder="">
                                             </div>
                                             <div class="form-group col-md-6">
@@ -320,7 +322,7 @@
                                             </div>
                                         </div>
                                         <div> 
-                                            <button id="submit" type="submit" class="btn btn-primary">Thêm</button>
+                                            <button id="save" type="save" class="btn btn-primary">Lưu</button>
                                             <button id="huy" type="reset" class="btn btn-light" >Hủy</button>
                                         </div>
                                     </form>
@@ -644,7 +646,7 @@
     <!-- bo-loc-select-chon-tinh-thanh-quan-huyen-xa-phuong -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="../assets/js/address.js"></script>
-    <script src="../assets/js/patient-add.js"></script>  
+    <script src="../assets/js/patient-edit.js"></script>  
     <script src="../assets/js/get-doctor-NameAva.js"></script>
 </body>
 
