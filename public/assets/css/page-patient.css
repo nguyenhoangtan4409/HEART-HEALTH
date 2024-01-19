@@ -1,0 +1,16 @@
+/* Thiết lập hiển thị flex cho container */
+#userListContainer {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép người dùng xuống dòng khi không đủ không gian */
+    justify-content: space-around; /* Căn giữa các phần tử trong hàng */
+}
+
+/* Thiết lập style cho mỗi người dùng */
+.odr-content {
+    width: 100%; /* Đặt chiều rộng của mỗi người dùng để chúng xuất hiện cạnh nhau */
+    margin: 10px; /* Khoảng cách giữa mỗi người dùng */
+}
+.user-image {
+    max-width: 100%; /* Đặt kích thước tối đa là 100% của phần tử cha */
+    height: auto; /* Giữ cho tỷ lệ khung hình ảnh không bị biến đổi */
+}

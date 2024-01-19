@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="shortcut icon" href="images/heartbeat.png" type="">
+  <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+  <link rel="stylesheet" href="./assets/css/loginStyle.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <!-- <button>
+      <a id="btnHome" class="btnHome" href="/">
+        <i class="fas fa-home" id="iconHomePage"></i>
+      </a>
+    </button>
+    <button>
+      <a id="btnHomeRight" class="btnHome" style="right: 15px; left: auto;" href="/">
+        <i class="fas fa-home" id="iconHomePage"></i>
+      </a>
+    </button> -->
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="./assets/images/backImg.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="./assets/images/frontImg.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Đăng nhập</div>
+          <!-- Đăng nhập -->
+          <form action="#" onsubmit="return login()">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Username/Email/Số điện thoại" required id="username">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Mật khẩu" required id="password">
+              </div>
+              <div style="margin: 10px auto; text-align: left;" class="text sign-up-text">
+                <input type="checkbox" id="role">
+                <label for="role">Người dùng</label> 
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Đăng nhập">
+              </div>
+              <!-- <div class="text sign-up-text">Chưa có tài khoản? <label for="flip">Đăng ký ngay</label></div> -->
+              <!-- <div class="text" style="text-align: center;"><a href="/">Quay về trang chủ</a></div> -->
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./assets/scripts/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .feedback-item {
+    width: 48%; /* Điều chỉnh kích thước item tùy thuộc vào ý của bạn */
+    margin-bottom: 20px;
+  }
+  
+  .feedback-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .img-box1 {
+    width: 100px; /* Điều chỉnh kích thước hình tùy thuộc vào ý của bạn */
+    height: 100px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .img-box1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .detail-box {
+    flex: 1;
+  }
+  
