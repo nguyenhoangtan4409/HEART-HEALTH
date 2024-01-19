@@ -75,7 +75,7 @@ function login() {
                         // Cài đặt một cookie
                         document.cookie = "loginSuccess=true; path=/";
                         // window.location.href = "/app/patient-list.html";
-                        window.location.href = "/app/page-patient.html";
+                        window.location.href = "/app/doctor-monitors-patients.html";
                     });
                 }
                 else {
