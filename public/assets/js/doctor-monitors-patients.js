@@ -100,10 +100,6 @@ function displayUser(user, sp02, heartbeat) {
                    <label for="spo2-value">SpO2(%)</label>
                 </div>
              </section>
-             <div id="notification" class="text-animation">
-                <span id="text-content"></span>
-                <div id="face-emoji"></div>
-             </div></div>
           </div>
        </div>
     </div>
