@@ -30,7 +30,7 @@
 
         <div class="iq-sidebar  sidebar-default ">
             <div class="iq-sidebar-logo d-flex align-items-center">
-                <a href="page-patient.html" class="header-logo">
+                <a href="doctor-monitors-patients.html" class="header-logo">
                     <img src="../assets/images/HEALTH.png" alt="logo">
                     <h3 class="logo-title light-logo">Heart Health </h3>
                 </a>
@@ -55,24 +55,24 @@
                             </a>
                             <ul id="patient" class="iq-submenu collapse" data-toggle="collapse">
                                 <li class="">
-                                    <a href="page-patient.html">
+                                    <a href="doctor-monitors-patients.html">
                                         <i class="las la-minus"></i><span>Theo dõi</span>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="patient-add.html">
+                                <li class="active">
+                                    <a href="doctor-add-patient.html">
                                         <i class="las la-minus"></i><span>Thêm bệnh nhân</span>
                                     </a>
                                 </li>
-                                <li class="active">
-                                    <a href="patient-list.html">
+                                <li class="">
+                                    <a href="doctor-patient-list.html">
                                         <i class="las la-minus"></i><span>Danh sách</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="">
-                            <a href="page-calender.html" class="svg-icon">
+                            <a href="doctor-calender.html" class="svg-icon">
                                 <svg class="svg-icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -94,8 +94,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                         <i class="ri-menu-line wrapper-menu"></i>
-                        <a href="page-patient.html" class="header-logo">
-                            
+                        <a href="doctor-monitors-patients.html" class="header-logo">
                             <h4 class="logo-title text-uppercase">Heart Health </h4>
 
                         </a>
@@ -150,7 +149,7 @@
                                                     d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                             </svg>
                                             <a href="/">Đăng xuất</a>
-                                        </li >
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -162,46 +161,171 @@
         <div class="content-page">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-xl-3 col-lg-4">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="header-title">
-                                    <h4 class="card-title">Danh sách</h4>
+                                    <h4 class="card-title">Chỉnh sửa thông tin</h4>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <div class="row justify-content-between">
-                                        <div class="col-sm-6 col-md-6">
-                                            <div id="user_list_datatable_info" class="dataTables_filter">
-                                                <form class="mr-3 position-relative">
-                                                    <div class="form-group mb-0">
-                                                        <input type="search" class="form-control"
-                                                            id="exampleInputSearch" placeholder="Tìm kiếm"
-                                                            aria-controls="user-list-table">
-                                                    </div>
-                                                </form>
+                                <form>
+                                    <div class="form-group">
+                                        <div class="crm-profile-img-edit position-relative">
+                                            <img id="profileImage" class="crm-profile-pic rounded avatar-100" 
+                                                src="../assets/images/user/11.png" alt="profile-pic">
+                                            <div class="crm-p-image bg-primary">
+                                                <i class="las la-pen upload-button"></i>
+                                                <input id="inputImage" class="file-upload" type="file" accept="image/*"style="display:none;" onchange="handleImageUpload(event)">
                                             </div>
                                         </div>
                                     </div>
-                                    <table id="user-list-table" class="table table-striped dataTable mt-4" role="grid"
-                                        aria-describedby="user-list-page-info">
-                                        <thead>
-                                            <tr class="ligth">
-                                                <th>Thông tin</th>
-                                                <th>Tên</th>
-                                                <th>Giới tính</th>
-                                                <th>Ngày sinh</th>
-                                                <th>Số điện thoại</th>
-                                                <th>Email</th>
-                                                <th>Tình trạng</th>
-                                                <th style="min-width: 100px">Thao tác </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody> 
-                                            <!-- Dữ liệu sẽ được chèn vào đây từ JavaScript -->
-                                        </tbody>
-                                    </table>
+                                    <div><span>Mạng xã hội</span></div>
+                                    <div class="form-group">
+                                        <label for="zurl">Zalo:</label>
+                                        <input type="text" class="form-control" id="zurl" placeholder="Số điện thoại">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="header-title">
+                                    <h4 class="card-title">Chỉnh sửa thông tin của bệnh nhân </h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="new-user-info">
+                                    <form>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="fname">Họ, tên đệm:</label>
+                                                <input type="text" class="form-control" id="fname"
+                                                    placeholder="Họ, tên đệm" required="true">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="lname">Tên:</label>
+                                                <input type="text" class="form-control" id="lname" placeholder="Tên" required="true">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="birthday">Ngày sinh:</label>
+                                                <input type="date" class="form-control" id="birthday" name="birthday">
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label class="d-block">Giới tính:</label>
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" id="customRadio6" name="gender"
+                                                        class="custom-control-input" checked="">
+                                                    <label class="custom-control-label" for="customRadio6"> Nam
+                                                    </label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" id="customRadio7" name="gender"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label" for="customRadio7"> Nữ
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="city">Thành phố, tỉnh:</label>
+                                                <select class="form-select form-select-sm mb-3 form-control" id="city"
+                                                    aria-label=".form-select-sm"  required="true">
+                                                    <option value="" selected>Chọn tỉnh thành</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="district">Quận, huyện:</label required="true">
+                                                <select class="form-select form-select-sm mb-3 form-control"
+                                                    id="district" aria-label=".form-select-sm">
+                                                    <option value="" selected>Chọn quận huyện</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="ward">Phường, xã:</label required="true">
+                                                <select class="form-select form-select-sm form-control" id="ward"
+                                                    aria-label=".form-select-sm">
+                                                    <option value="" selected>Chọn phường xã</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label for="add1">Số nhà, đường:</label>
+                                                <input type="text" class="form-control" id="add1"
+                                                    placeholder="Số nhà, tên đường, khu phố">
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label for="country">Quốc tịch:</label>
+                                                <select name="type" class="selectpicker form-control" data-style="py-0" id = "country">
+                                                    <option>VietNam</option>
+                                                    <option>Korean</option>
+                                                    <option>USA</option>
+                                                    <option>India</option>
+                                                    <option>Africa</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-6">
+                                                <label for="career">Nghề nghiệp:</label>
+                                                <select name="type" class="selectpicker form-control" data-style="py-0"  id = "career">
+                                                    <option>Kinh doanh</option>
+                                                    <option>Công nhân</option>
+                                                    <option>Công nhân viên chức</option>
+                                                    <option>Sinh viên</option>
+                                                    <option>Nội trợ</option>
+                                                    <option>Nghề nghiệp tự do</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="mobno">Số điện thoại:</label>
+                                                <input type="text" class="form-control" id="mobno"
+                                                    placeholder="Số điện thoại" required="true">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="email">Email:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="History">Tiền sử bệnh án:</label>
+                                                <input type="text" class="form-control" id="History" required="true" placeholder="Tiền sử bệnh án, ưu tiên các bệnh liên quan đến Tim Mạch" >
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <h5 class="mb-3">Cấp lại Tài khoản định danh</h5>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label for="uname">Tên đăng nhập:</label>
+                                                <input type="text" class="form-control" id="uname"
+                                                    placeholder="Tên đăng nhập">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="pass">Cấp lại mật khẩu:</label>
+                                                <input type="text" class="form-control" id="pass"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="rpass">Nhập lại mật khẩu:</label>
+                                                <input type="text" class="form-control" id="rpass"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="role">Role:</label>
+                                                <select name="type" class="selectpicker form-control" data-style="py-0" id = "role">
+                                                    <option>user</option>
+                                                    <option>admin</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="idDevice">idDevice:</label>
+                                                <input class="form-control" id="idDevice"
+                                                placeholder="">
+                                            </div>
+                                        </div>
+                                        <div> 
+                                            <button id="save" type="save" class="btn btn-primary">Lưu</button>
+                                            <button id="huy" type="reset" class="btn btn-light" >Hủy</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -516,10 +640,13 @@
 
     <!-- app JavaScript -->
     <script src="../assets/js/app.js"></script>
+
     <script src="../assets/vendor/moment.min.js"></script>
 
-    <script src="../assets/js/listPatient.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- bo-loc-select-chon-tinh-thanh-quan-huyen-xa-phuong -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="../assets/js/address.js"></script>
+    <script src="../assets/js/patient-edit.js"></script>  
     <script src="../assets/js/get-doctor-NameAva.js"></script>
 </body>
 

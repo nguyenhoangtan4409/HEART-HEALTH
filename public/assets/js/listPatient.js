@@ -23,8 +23,8 @@ function displayListUser(users) {
             `<td><span class="badge ${user.status === 1 ? 'bg-primary' : 'bg-danger'}">${user.status === 1 ? 'Bình thường' : 'Nguy cơ'}</span></td>`,
             `<td>
                 <div class="flex align-items-center list-user-action">
-                    <a class="btn btn-sm bg-primary info-button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Xem" href="../app/patient-profile.html?username=${user.username}"><i class="ri-menu-3-line mr-0"></i></a>
-                    <a class="btn btn-sm bg-primary edit-button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sửa" href="../app/patient-edit.html?username=${user.username}"><i class="ri-pencil-line mr-0"></i></a>
+                    <a class="btn btn-sm bg-primary info-button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Xem" href="../app/doctor-patient-detailprofile.html?username=${user.username}"><i class="ri-menu-3-line mr-0"></i></a>
+                    <a class="btn btn-sm bg-primary edit-button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sửa" href="../app/doctor-edit-patient.html?username=${user.username}"><i class="ri-pencil-line mr-0"></i></a>
                     <a class="btn btn-sm bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Xóa" href="#" onclick="deleteUser('${user.username}');"><i class="ri-delete-bin-line mr-0"></i></a>
                 </div>
             </td>`
