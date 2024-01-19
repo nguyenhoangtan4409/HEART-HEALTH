@@ -40,7 +40,6 @@ function displayWeatherInfo(data) {
     const temperatureKelvin = data.main.temp;
     const temperatureCelsius = convertKelvinToCelsius(temperatureKelvin);
     const weatherIcon = getWeatherIcon(data.weather[0].icon);
-    const thermometerIcon = './images/nhietke.png'; 
 
     const weatherHtml = `<div><i class="fa fa-thermometer-three-quarters" aria-hidden="true" style="font-size: 200%; margin-left: 5%"></i>
                         <p style="float:left; font-size: 100%; margin-left:5%"> ${temperatureCelsius} °C</p></div>
@@ -64,22 +63,22 @@ function convertKelvinToCelsius(kelvin) {
 function changeBackground(weatherData) {
     const header = document.querySelector('.header');
     const weatherType = weatherData.weather[0].main.toLowerCase();
-
+    console.log(weatherType);
     switch (weatherType) {
         case 'clear':
-            header.style.background = 'url("./images/clear.jpg")';
+            header.style.background = 'url("/assets/images/clear.jpg")';
             break;
         case 'clouds':
-            header.style.background = 'url("./images/cloud.jpg")';
+            header.style.background = 'url("/assets/images/cloud.jpg")';
             break;
         case 'rain':
-            header.style.background = 'url("./images/rain.jpg")';
+            header.style.background = 'url("/assets/images/rain.jpg")';
             break;
         case 'sun':
-            header.style.background = 'url("./images/sun.jpg")';
+            header.style.background = 'url("/assets/images/sun.jpg")';
             break;
         default:
-            header.style.background = 'url("./images/sương.jpg")';
+            header.style.background = 'url("/assets/images/sương.jpg")';
     }
 
     header.style.backgroundSize = 'cover';

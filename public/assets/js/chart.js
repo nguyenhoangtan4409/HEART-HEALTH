@@ -1,7 +1,11 @@
 /// <reference types="chart.js" />
+let username;
 document.addEventListener('DOMContentLoaded', function() {
-  const username = localStorage.getItem('loginIdentifier');
+  username = localStorage.getItem('loginIdentifier');
+  fetchDataAndInitializeChart(username);
   console.log(username);
+});
+
 let globalData;
 const labelH = [];
 const dataH = {
@@ -112,7 +116,7 @@ function updateData(index) {
   updateChart();
 }
 
-function fetchDataAndInitializeChart() {
+function fetchDataAndInitializeChart(username) {
   fetch(`/api/v1/user/getuser/${username}`)
   .then(response => response.json())
   .then(data => {
@@ -156,8 +160,6 @@ socket.on('newData', function (data) {
   updateChartConfiguration();
 });
 
-fetchDataAndInitializeChart();
-
 const btnBack = document.getElementById('btnBack');
 btnBack.addEventListener('click', () => {
   if (currentIndex > 0 && (end - currentIndex == 4)) {
@@ -180,7 +182,7 @@ btnNext.addEventListener('click', () => {
   }
 });
 // Xử lý sự kiện khi người dùng chọn một ngày trong lịch
-function handleDayClick(day) {
+function handleDayClick() {
   const selectedDate = $("#dob").datepicker("getDate");
   const selectedDateFormatted = new Date(selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60000)
     .toISOString()
@@ -188,17 +190,19 @@ function handleDayClick(day) {
 
   let startIndex = -1;
   let endIndex = -1;
-  console.log(globalData[10].timing.substring(0, 10));
   let i = 0;
+  console.log("globalData.length: "+globalData.length);
   for (i; i < globalData.length; i++) {
-    if (globalData[i].timing.substring(0, 10) === selectedDateFormatted) {
+    if (globalData[i].timing.substring(0, 10) == selectedDateFormatted) {
       startIndex = i;
       endIndex = i + 4;
+      console.log("globalData[i].timing.substring(0, 10) "+globalData[i].timing.substring(0, 10));
       break;
     }
   }
   currentIndex = startIndex;
   end = endIndex;
+  console.log("selectedDateFormatted: "+selectedDateFormatted+" currentIndex: "+currentIndex+ " endIndex: "+endIndex);
   updateChartConfiguration();
   updateChart();
 }
@@ -232,7 +236,7 @@ function updateChartConfiguration() {
 
   chartH.config.data.datasets[0].data = heartbeatData;
   chartS.config.data.datasets[0].data = sp02Data;
-
+  
   const selectedDate = new Date(globalData[end].timing.substring(0, 10));
   const formattedDate = formatDate(selectedDate);
   $("#dob").val(formattedDate);
@@ -247,6 +251,4 @@ function updateChartConfiguration() {
   chartS.update();
   updateBPM(heartbeatData, sp02Data);
 }
-
-});
 

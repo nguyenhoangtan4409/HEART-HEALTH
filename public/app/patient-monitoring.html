@@ -12,10 +12,11 @@
   <link rel="shortcut icon" href="/assets/images/heartbeat.png" type="">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/heartbeat.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" />
 
@@ -34,7 +35,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Bootstrap JS và jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="clrewe1h6184ippb4mxvlj2yh"></script>
@@ -47,7 +47,7 @@
         onSelect: function (dateText, inst) {
           const selectedDate = new Date(dateText);
           const day = selectedDate.getDate();
-          handleDayClick(day);
+          handleDayClick();
         }
       });
     });
