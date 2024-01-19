@@ -39,7 +39,7 @@ exports.createUser = asyncHandler(async (req, res, next) => {
             idDevice: req.body.idDevice,
             gender: req.body.gender,
             UrlImg: req.body.UrlImg,
-            status: req.body.status,
+            status: "1",
             role: "user",
             idDevice: req.body.idDevice,
         });
